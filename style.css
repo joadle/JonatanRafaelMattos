@@ -147,11 +147,12 @@ button {
 .logo {
     font-family: 'Outfit', sans-serif;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
     color: var(--primary-dark);
     display: flex;
     align-items: center;
     gap: 10px;
+    white-space: nowrap;
 }
 
 .logo-icon {
@@ -521,6 +522,15 @@ button {
         display: none;
     }
 
+    .nav-logo-img {
+        height: 40px !important;
+    }
+
+    .logo {
+        gap: 8px;
+        /* Reduce gap slightly */
+    }
+
     .mobile-menu-btn {
         display: block;
     }
@@ -565,12 +575,13 @@ button {
         padding: 1.5rem;
         text-align: left !important;
 
-        /* RESTORE GLASS EFFECT */
-        background: rgba(255, 255, 255, 0.2);
+        /* RESTORE GLASS EFFECT - DARKER FOR CONTRAST */
+        background: rgba(15, 23, 42, 0.75);
+        /* Darker background to verify white text */
         /* Translucent */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: var(--radius-lg);
         color: var(--white);
         /* White text again for contrast on blur */
